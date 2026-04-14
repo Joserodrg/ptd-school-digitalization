@@ -353,6 +353,7 @@ button {
     font-weight: 700;
     font-size: var(--text-lg);
     color: var(--azul-principal);
+    white-space: nowrap;
 }
 
 .navbar-brand .logo-icon {
@@ -371,7 +372,7 @@ button {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
+    gap: var(--space-3);
     list-style: none;
 }
 
@@ -384,6 +385,7 @@ button {
     border-radius: var(--radius-sm);
     transition: var(--transition-base);
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -1629,6 +1631,142 @@ button {
     }
 }
 
+
+/* ============================================
+   PRICING / PRESUPUESTO CARDS
+   ============================================ */
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+}
+
+.pricing-card {
+    background: var(--surface-card);
+    border: 1px solid var(--gris-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--transition-base);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--azul-principal);
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.03) translateY(-8px);
+}
+
+.pricing-card .badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--azul-principal), var(--azul-claro));
+    color: #fff;
+    padding: var(--space-1) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-md);
+    white-space: nowrap;
+}
+
+.pricing-card h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    text-align: center;
+    color: var(--gris-900);
+    margin-bottom: var(--space-4);
+}
+
+.pricing-card .price {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: var(--space-6);
+    color: var(--azul-oscuro);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.pricing-card .price span:first-child {
+    font-size: var(--text-2xl);
+    margin-right: 4px;
+    color: var(--azul-principal);
+}
+
+.pricing-card .price span:last-child {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--gris-500);
+}
+
+.pricing-card .features {
+    list-style: none;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+}
+
+.pricing-card .features li {
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--gris-600);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    line-height: 1.5;
+}
+
+.pricing-card .features li i {
+    color: var(--success);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.pricing-card .additional-costs {
+    background: var(--gris-50);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    color: var(--gris-600);
+    border: 1px solid var(--gris-200);
+    line-height: 1.6;
+}
+
+.pricing-card .additional-costs strong {
+    color: var(--gris-900);
+    display: block;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 1024px) {
+    .pricing-card.popular {
+        transform: scale(1);
+    }
+    .pricing-card.popular:hover {
+        transform: translateY(-8px);
+    }
+}
 /* ============================================
    MOBILE NAV OVERLAY
    ============================================ */
